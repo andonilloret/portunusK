@@ -1,0 +1,17 @@
+table span{
+  cursor: pointer;
+}
+table span:hover{
+  color: #F33;
+}
+.keytable{
+  /*display: none;*/
+}
+.client-li{
+  cursor: pointer;
+}
+
+.tdRecaching{
+  text-align: center;
+  background-color: #eee;
+}
