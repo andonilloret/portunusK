@@ -1,5 +1,3 @@
-var redis = require("redis"),
-    client = redis.createClient({ host:"localhost", port:'6379'});
 var async = require("async");
 var LaravelRequest = require('./../../lib/laravelRequests');
 

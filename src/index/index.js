@@ -1,5 +1,5 @@
-var redis = require("redis"),
-    client = redis.createClient({ host:"localhost", port:'6379'});
+//var client = require("redis").createClient({ host:"localhost", port:'6379'});
+var client = require("redis").createClient({ host:process.env.REDIS_HOST , port:'6379'});
 
 function getValues(storedKeys, keys, callback){
   if(storedKeys.length == 0)

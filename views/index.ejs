@@ -27,7 +27,7 @@
     var keys = <%- JSON.stringify(keys) %>
     var jobs = <%- JSON.stringify(jobs) %>
     //socket
-    var socket = io('http://localhost:3001');
+    var socket = io('//'+window.location.hostname+':3001');
   </script>
   <script type = "text/babel" src = "react/jobTable.js"></script>
   <script type = "text/babel" src = "react/keyTable.js"></script>
