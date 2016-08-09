@@ -1,5 +1,3 @@
-var LaravelRequest = require('./../../lib/laravelRequests');
-
 function cacheQuery(callback){
   ctx = this;
   if(ctx.params){

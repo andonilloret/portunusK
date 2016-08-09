@@ -1,15 +1,11 @@
-var redis = require("redis"),
-    client = redis.createClient({ host:"localhost", port:'6379'});
-var LaravelRequest = require('./../../lib/laravelRequests');
+var client = require("redis").createClient({ host:(process.env.REDIS_HOST || "localhost"), port:'6379'});
 
 function cacheQuery(callback){
   ctx = this;
   if(ctx.params){
     client.keys(ctx.params.clientName+"*", function (err, keys) {
       for(keyIndex in keys)
-        ctx.doLaravelRequest(keys[keyIndex], function(err, msg){
-          console.log("Se envio la petición para refrescar la llave");
-        });
+        ctx.doLaravelRequest(keys[keyIndex], function(err, msg){});
       callback(null, {"msg": "Se envio la petición para refrescar Cache de cliente"});
     });
   }else {

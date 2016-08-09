@@ -1,5 +1,4 @@
 var async = require("async");
-var LaravelRequest = require('./../../lib/laravelRequests');
 
 function getJobs(callback){
   ctx = this;

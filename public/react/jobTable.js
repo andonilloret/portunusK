@@ -1,7 +1,11 @@
 
 var JobTable = React.createClass({
   getInitialState: function() {
-    socket.on('cachedOK', this.refreshJobList);
+    var ctxr = this;
+    socket.on('cachedOK', ctxr.refreshJobList);
+    socket.on('cachedERROR', function(data){
+      console.log(data);
+    });
     return {"jobs": jobs}
   },
   render: function(){
